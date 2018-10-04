@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+
+<label for="input"></label>
+<div ng-app="myApp" ng-controller="myCtrl">
+    <select id="input" ng-model="selectedName" ng-options="x for x in names">
+    </select>
+</div>
+
+<label for="input-value"></label>
+<input id="input-value" type="number">
+
+<button onclick="convert()">Convert</button>
+
+<label for="output-value"></label>
+<input id="output-value" type="number">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.names = ["Length (cm -> in)", "Volume (L -> gal)", "Weight (kg -> lb)"];
+    });
+</script>
+
+<script>
+    function convert() {
+        var select = document.getElementById("input").value;
+        var output = document.getElementById("output-value").value;
+        var input = document.getElementById("output-value").value;
+
+        console.log(input);
+        console.log(select);
+        if(select == "string:Length (cm -> in)"){
+            console.log(input);
+            console.log(select);
+           output = input*0.39370079;
+           console.log(output);
+        }
+        console.log(input);
+        else if(select == "string:Volume (L -> gal)"){
+            output = input*0.264172;
+        }
+        else if(select == "string:Weight (kg -> lb)"){
+            output = input*2.2046226218;
+        }
+        else {
+            console.log("here");
+        }
+    }
+</script>
+
+</body>
+</html>

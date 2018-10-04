@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+    <select id="input" ng-model="selectedName" ng-options="x for x in names">
+    </select>
+</div>
+
+<label for="input-value"></label>
+<input id="input-value" type="number">
+
+<button onclick="myFunction()">Convert</button>
+
+<label for="output-value"></label>
+<input id="output-value" type="number">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.names = ["Length(in -> cm)", "Volume (gal -> L)", "Weight (lb -> kg)"];
+    });
+</script>
+
+<script>
+
+</script>
+
+</body>
+</html>
